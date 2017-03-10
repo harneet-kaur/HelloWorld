@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
 
 	@RequestMapping(value="/authenticateUser", method=RequestMethod.GET)
-	public String AuthenticateUser(@RequestParam("username") String username,
+	public ModelAndView AuthenticateUser(@RequestParam("username") String username,
 			@RequestParam("password") String password){
 		ModelAndView mv = new ModelAndView("login");
 		
@@ -24,7 +24,7 @@ public class LoginController {
 			mv.addObject("response", "ENTER USERNAME AND PASSWORD");
 		}
 		
-		return password;
+		return mv;
 		
 	}
 }
