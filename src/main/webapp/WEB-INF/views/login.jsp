@@ -27,6 +27,11 @@
 			<td colspan="2" align="center"> <a href="#" >Forget Password</a> </td>
 			
 		</tr>
+		
+		<tr>
+			<td colspan="2" align="center"> ${response} </td>
+			
+		</tr>
 	</table>
 </form>
 </body>
@@ -37,7 +42,7 @@ function checkAuthentication(){
 	alert(username);
 	$.ajax({
 		type: "GET",
-		url: "/authenticate-user",
+		url: "/authenticateUser",
 		data: {
 			username : username,
 			password : password
